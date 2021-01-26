@@ -6,35 +6,31 @@
             <div class="card">
                 <div class="card-header">
 
-                Tambah Data Kota
+                Tambah Data Kecamatan
                 
                 </div>
                 <div class="card-body">
-                    <form action="{{route('kota.store')}}" method="post">
+                    <form action="{{route('kecamatan.store')}}" method="post">
                     @csrf
                     <div class="form-group">
 
-                        <label for="">pilih provinsi</label>
-                        <select name="id_provinsi" class="form-control">
-                            @foreach($provinsi as $data)
-                            <option value="{{$data->id}}">{{$data->nama_provinsi}}</option>
+                        <label for="">pilih kota</label>
+                        <select name="id_kota" class="form-control">
+                            @foreach($kota as $data)
+                            <option value="{{$data->id}}">{{$data->nama_kota}}</option>
                             @endforeach
                         </select>
                     </div>
 
-                    <div class="form-group">
-                        <label for="">kode kota</label>
-                        <input type="text" name="kode_kota" class="form-control" require>
                     
-                    </div>
                     <div class="form-group">
-                        <label for="">nama kota</label>
-                        <input type="text" name="nama_kota" class="form-control" require>
+                        <label for="">nama kecamatan</label>
+                        <input type="text" name="nama_kecamatan" class="form-control" require>
                     
                     </div>
                     <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn block">Simpan</button>
-                                <a href=" {{ route('kota.index') }} " class="btn btn-danger">Back</a>
+                                <a href=" {{ route('kecamatan.index') }} " class="btn btn-danger">Back</a>
                             </div>
                     </form>
                 

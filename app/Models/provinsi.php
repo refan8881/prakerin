@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Kota;
 
 class provinsi extends Model
 {
     public function kota(){
-        return $this->hasMany('app\Model\kota','id_provinsi');
+        return $this->hasMany('App\Models\kota','id_provinsi');
     }
 }

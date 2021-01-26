@@ -5,7 +5,7 @@
 <div class="col-md-12">
     <div class="card">
         <div class="card-header">
-        Data Provinsi
+        Data kota
         <a href="{{route('kota.create')}}" class="btn btn-primary float-right"> 
             tambah
          </a>
@@ -17,6 +17,7 @@
 
                         <tr>
                             <th>No</th>
+                            <th>provinsi</th>
                             <th>Kode Kota</th>
                             <th>kota</th>
                             <th>Aksi</th>
@@ -26,10 +27,11 @@
                         @foreach($kota as $data)
                         <tr>
                             <td>{{$no++}}</td>
+                            <td>{{$data->provinsi->nama_provinsi}}</td>
                             <td>{{$data->kode_kota}}</td>
                             <td>{{$data->nama_kota}}</td>
                             <td>
-                                <form action="{{route('provinsi.destroy',$data->id)}}" method="post">
+                                <form action="{{route('kota.destroy',$data->id)}}" method="post">
                                 @csrf
                                 @method('delete')
                                 <a href="{{route('kota.edit',$data->id)}}" class="btn btn-info">edit</a>
