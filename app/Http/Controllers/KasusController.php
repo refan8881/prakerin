@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\kasus;
+use App\Models\desa;
+use App\Models\provinsi;
+use App\Models\kecamatan;
+use App\Models\rw;
+use App\Models\kota;
 use Illuminate\Http\Request;
 
 class KasusController extends Controller
@@ -14,7 +19,9 @@ class KasusController extends Controller
      */
     public function index()
     {
-        //
+        $rw = Rw::with('desa')->get();
+
+        return view('admin.rw.index', compact('rw'));
     }
 
     /**

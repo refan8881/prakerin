@@ -6,20 +6,20 @@
             <div class="card">
                 <div class="card-header">
 
-                 Data kota
+                 Data Rw
                 
                 </div>
                 <div class="card-body">
-                    <form action="{{route('kecamatan.update',$kecamatan->id)}}" method="post">
+                    <form action="{{route('rw.update',$rw->id)}}" method="post">
 
                     <div class="form-group">
-                        <label for="">Nama kota</label>
-                        <input type="text" name="id_kota"  value="{{$kecamatan->kota->   nama_kota}}" class="form-control" readonly>
+                        <label for="">Nama desa</label>
+                        <input type="text" name="id_desa"  value="{{$rw->desa->   nama_desa}}" class="form-control" readonly>
                     
 
                     <div class="form-group">
-                        <label for="">Nama Kecamatan</label>
-                        <input type="text" name="nama_kecamatan"  value="{{$kecamatan->nama_kecamatan}}" class="form-control" readonly>
+                        <label for="">Nama rw</label>
+                        <input type="text" name="nama_rw"  value="{{$rw->nama_rw}}" class="form-control" readonly>
                     
                     </div>
                     

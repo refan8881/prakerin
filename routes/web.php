@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProvinsiController;
 use App\Http\Controllers\KotaController;
 use App\Http\Controllers\KecamatanController;
+use App\Http\Controllers\desaController;
+use App\Http\Controllers\rwController;
+use App\Http\Controllers\kasusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,5 +65,8 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth']],function(){
     Route::resource('provinsi',provinsiController::class);
     Route::resource('kota', KotaController::class);
     Route::resource('kecamatan', KecamatanController::class);
+    Route::resource('desa', desaController::class);
+    Route::resource('rw', rwController::class);
+    Route::resource('kasus', kasusController::class);
 
 });

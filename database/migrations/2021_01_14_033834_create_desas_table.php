@@ -18,7 +18,6 @@ class CreateDesasTable extends Migration
             $table->unsignedInteger('id_kecamatan');
             $table->foreign('id_kecamatan')->references('id')
             ->on('kecamatans')->onDelete('cascade');
-            $table->string('kode_desa');
             $table->string('nama_desa');
             $table->timestamps();
         });
