@@ -6,17 +6,25 @@
             <div class="card">
                 <div class="card-header">
 
-                Data Provinsi
+                Tambah Data Provinsi
                 
                 </div>
                 <div class="card-body">
+
+
+                <h1>Create Post</h1>
+
+
+
                     <form action="{{route('provinsi.store')}}" method="post">
                     @csrf
 
                     <div class="form-group">
                         <label for="">kode provinsi</label>
-                        <input type="text" name="kode_provinsi" class="form-control" require>
-                    
+                        <input type="text" name="kode_provinsi" class="form-control"  require>
+                        @if($errors->has('kode_provinsi'))
+                          <span class="text-danger">{{ $errors->first('kode_provinsi') }}</span>
+                        @endif
                     </div>
                     <div class="form-group">
                         <label for="">nama provinsi</label>

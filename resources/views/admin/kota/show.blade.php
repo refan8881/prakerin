@@ -14,7 +14,7 @@
 
                     <div class="form-group">
                         <label for="">Nama Provinsi</label>
-                        <input type="text" name="id_provinsi"  value="{{$kota->provinsi->nama_provinsi}}" class="form-control" readonly>
+                        <input type="text" name="id_provinsi"  value="{{$kota->provinsi->   nama_provinsi}}" class="form-control" readonly>
                     
 
                     <div class="form-group">

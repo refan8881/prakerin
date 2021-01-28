@@ -10,6 +10,10 @@
                 
                 </div>
                 <div class="card-body">
+
+                <h1>Create Post</h1>
+
+
                     <form action="{{route('provinsi.update',$provinsi->id)}}" method="post">
                     @method('put')
                     @csrf
@@ -17,7 +21,9 @@
                     <div class="form-group">
                         <label for="">kode provinsi</label>
                         <input type="text" name="kode_provinsi"  value="{{$provinsi->kode_provinsi}}" class="form-control" require>
-                    
+                        @if($errors->has('kode_provinsi'))
+      <span class="text-danger">{{ $errors->first('kode_provinsi') }}</span>
+@endif
                     </div>
                     <div class="form-group">
                         <label for="">nama provinsi</label>

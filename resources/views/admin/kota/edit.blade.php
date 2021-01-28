@@ -27,12 +27,16 @@
                     <div class="form-group">
                         <label for="">kode kota</label>
                         <input type="text" name="kode_kota"  value="{{$kota->kode_kota}}" class="form-control" require>
-                    
+                        @if($errors->has('kode_kota'))
+                          <span class="text-danger">{{ $errors->first('kode_kota') }}</span>
+                        @endif
                     </div>
                     <div class="form-group">
-                        <label for="">nama provinsi</label>
+                        <label for="">nama kota</label>
                         <input type="text" name="nama_kota" value="{{$kota->nama_kota}}" class="form-control" require>
-                    
+                        @if($errors->has('nama_kota'))
+                          <span class="text-danger">{{ $errors->first('nama_kota') }}</span>
+                        @endif
                     </div>
                     <div class="form-group">
 

@@ -26,7 +26,9 @@
                     <div class="form-group">
                         <label for="">nama desa</label>
                         <input type="text" name="nama_desa" class="form-control" require>
-                    
+                        @if($errors->has('nama_desa'))
+                          <span class="text-danger">{{ $errors->first('nama_desa') }}</span>
+                        @endif
                     </div>
                     <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn block">Simpan</button>

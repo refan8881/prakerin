@@ -27,7 +27,7 @@
                     <div class="form-group">
                         <label for="">nama rw</label>
                         <input type="text" name="nama_rw"  value="{{$rw->nama_rw}}" class="form-control" require>
-                    
+                        
                     </div>
                    
                     <div class="form-group">

@@ -27,7 +27,9 @@
                     <div class="form-group">
                         <label for="">nama kecamatan</label>
                         <input type="text" name="nama_kecamatan"  value="{{$kecamatan->nama_kecamatan}}" class="form-control" require>
-                    
+                        @if($errors->has('nama_kecamatan'))
+                          <span class="text-danger">{{ $errors->first('nama_kecamatan') }}</span>
+                        @endif
                     </div>
                    
                     <div class="form-group">

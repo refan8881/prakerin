@@ -21,7 +21,7 @@ class KasusController extends Controller
     {
         $rw = Rw::with('desa')->get();
 
-        return view('admin.rw.index', compact('rw'));
+        return view('admin.rw.index', compact('kasus'));
     }
 
     /**

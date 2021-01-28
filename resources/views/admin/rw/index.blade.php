@@ -18,7 +18,7 @@
                         <tr>
                             <th>No</th>
                             <th>Nama Desa</th>
-                            <th>Nama Rw</th>
+                            <th>No Rw</th>
                             
                         </tr>
                         @php $no=1; @endphp
