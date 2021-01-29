@@ -38,6 +38,16 @@ class RwController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            
+            'nama_rw' => 'required|unique:rws'
+        ],[
+            
+            'nama_rw.required' => 'nama rw tidak boleh kosong',
+            'nama_rw.max' => 'nama rw tidak boleh kurang dari 2 huruf',
+            'nama_rw.unique' => 'nama rw sudah terdaftar',
+        ]
+        );
         $rw = new Rw();
         $rw->id_desa = $request->id_desa;
         $rw->nama_rw = $request->nama_rw;
@@ -81,6 +91,16 @@ class RwController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            
+            'nama_rw' => 'required|unique:rws'
+        ],[
+            
+            'nama_rw.required' => 'nama rw tidak boleh kosong',
+            'nama_rw.max' => 'nama rw tidak boleh kurang dari 2 huruf',
+            'nama_rw.unique' => 'nama rw sudah terdaftar',
+        ]
+        );
         $rw = Rw::findOrFail($id);
         $rw->id_desa = $request->id_desa;
         $rw->nama_rw = $request->nama_rw;

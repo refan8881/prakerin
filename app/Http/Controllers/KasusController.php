@@ -3,11 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\kasus;
-use App\Models\desa;
-use App\Models\provinsi;
-use App\Models\kecamatan;
 use App\Models\rw;
-use App\Models\kota;
 use Illuminate\Http\Request;
 
 class KasusController extends Controller
@@ -19,9 +15,8 @@ class KasusController extends Controller
      */
     public function index()
     {
-        $rw = Rw::with('desa')->get();
-
-        return view('admin.rw.index', compact('kasus'));
+        $kasus = Kasus::with('rw')->get();
+        return view('admin.kasus.index', compact('kasus'));
     }
 
     /**
@@ -31,7 +26,8 @@ class KasusController extends Controller
      */
     public function create()
     {
-        //
+        $rw = Rw::all();
+        return view('admin.kasus.create',compact('rw'));
     }
 
     /**
@@ -42,7 +38,13 @@ class KasusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $kasus = new Kasus();
+        $kasus->id_rw = $request->id_rw;
+        $kasus->nama_kasus = $request->nama_kasus;
+        $kasus->save();
+        return redirect()->route('kasus.index')
+            ->with(['success'=>'Data <b>', $kasus->nama_kasus, 
+            '</b> Berhasil di input']);
     }
 
     /**
@@ -51,9 +53,10 @@ class KasusController extends Controller
      * @param  \App\Models\kasus  $kasus
      * @return \Illuminate\Http\Response
      */
-    public function show(kasus $kasus)
+    public function show($id)
     {
-        //
+        $kasus = Kasus::findOrFail($id);
+        return view('admin.kasus.show',compact('kasus'));
     }
 
     /**
@@ -62,9 +65,11 @@ class KasusController extends Controller
      * @param  \App\Models\kasus  $kasus
      * @return \Illuminate\Http\Response
      */
-    public function edit(kasus $kasus)
+    public function edit($id)
     {
-        //
+        $rw = Rw::all();
+        $kasus = Kasus::findOrFail($id);
+        return view('admin.kasus.edit', compact('kasus', 'rw'));
     }
 
     /**
@@ -74,9 +79,14 @@ class KasusController extends Controller
      * @param  \App\Models\kasus  $kasus
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, kasus $kasus)
+    public function update(Request $request, $id)
     {
-        //
+        $kasus = Kasus::findOrFail($id);
+        $kasus->id_rw = $request->id_rw;
+        $kasus->nama_kasus = $request->nama_kasus;
+        $kasus ->save();
+        return redirect()->route('kasus.index')
+        ->with(['success'=>'Data <b>',$kasus ->nama_kasus,'</b> Berhasil Di Edit']);
     }
 
     /**
@@ -85,8 +95,12 @@ class KasusController extends Controller
      * @param  \App\Models\kasus  $kasus
      * @return \Illuminate\Http\Response
      */
-    public function destroy(kasus $kasus)
+    public function destroy($id)
     {
-        //
+        $kasus = Kasus::findOrFail($id);
+        $kasus->delete();
+        return redirect()->route('kasus.index')
+        ->with(['success'=>'Data <b>',$kasus->nama_kasus,
+        '</b> Data Berhasil Di Hapus']);
     }
 }

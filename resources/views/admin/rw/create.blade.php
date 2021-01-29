@@ -20,6 +20,9 @@
                             <option value="{{$data->id}}">{{$data->nama_desa}}</option>
                             @endforeach
                         </select>
+                        @if($errors->has('nama_desa'))
+                          <span class="text-danger">{{ $errors->first('nama_desa') }}</span>
+                        @endif
                     </div>
 
                     

@@ -24,7 +24,7 @@
 
                     
                     <div class="form-group">
-                        <label for="">No kasus</label>
+                        <label for="">Positif</label>
                         <input type="text" name="nama_kasus" class="form-control" require>
                     
                     </div>

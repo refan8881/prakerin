@@ -11,12 +11,7 @@
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
           <!-- Nav items -->
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="examples/dashboard.html">
-                <i class="ni ni-tv-2 text-primary"></i>
-                <span class="nav-link-text">Dashboard</span>
-              </a>
-            </li>
+           
             <li class="nav-item">
               <a class="nav-link" href="./provinsi">
                 <i class="ni ni-planet text-orange"></i>
