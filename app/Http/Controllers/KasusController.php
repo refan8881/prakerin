@@ -40,11 +40,13 @@ class KasusController extends Controller
     {
         $kasus = new Kasus();
         $kasus->id_rw = $request->id_rw;
-        $kasus->nama_kasus = $request->nama_kasus;
+        $kasus->positif = $request->positif;
+        $kasus->meninggal = $request->meninggal;
+        $kasus->sembuh = $request->sembuh;
+        $kasus->tanggal = $request->tanggal;
         $kasus->save();
         return redirect()->route('kasus.index')
-            ->with(['success'=>'Data <b>', $kasus->nama_kasus, 
-            '</b> Berhasil di input']);
+            ->with(['success'=>'Data Berhasil di input']);
     }
 
     /**
@@ -83,10 +85,13 @@ class KasusController extends Controller
     {
         $kasus = Kasus::findOrFail($id);
         $kasus->id_rw = $request->id_rw;
-        $kasus->nama_kasus = $request->nama_kasus;
-        $kasus ->save();
+        $kasus->positif = $request->positif;
+        $kasus->meninggal = $request->meninggal;
+        $kasus->sembuh = $request->sembuh;
+        $kasus->tanggal = $request->tanggal;
+        $kasus->save();
         return redirect()->route('kasus.index')
-        ->with(['success'=>'Data <b>',$kasus ->nama_kasus,'</b> Berhasil Di Edit']);
+            ->with(['info'=>'Data Berhasil di edit']);
     }
 
     /**
