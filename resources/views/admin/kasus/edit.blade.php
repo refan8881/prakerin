@@ -1,49 +1,50 @@
 @extends('layouts.master')
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-
-                Edit Data Rw
-                
-                </div>
-                <div class="card-body">
-                    <form action="{{route('rw.update',$rw->id)}}" method="post">
-                    @method('put')
-                    @csrf
-                    <div class="form-group">
-                                <label for="">Pilih Desa</label>
-                                <select name="id_desa" class="form-control">
-                                    @foreach($desa as $data)
-                                        <option value="{{$data->id}}" {{$data->id == $rw->id_desa ? 'selected' : ''}}>
-                                            {{$data->nama_desa}}
-                                        </option>
-                                    @endforeach
-                                </select>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        Edit Data Kasus
+                    </div>
+                    <div class="card-body">
+                        <form action="{{route('kasus.update', $kasus->id)}}" method="post">
+                            @method('put')
+                            @csrf
+                            <div class="col">
+                                @livewire('dropdowns',['selectedRw'=>$kasus->id_rw,'selecteddesa'=>$kasus->rw->id_desa,
+                                            'selectedKecamatan'=>$kasus->rw->desa->id_kecamatan,
+                                            'selectedKota'=>$kasus->rw->desa->kecamatan->id_kota,
+                                            'selectedProvinsi'=>$kasus->rw->desa->kecamatan->kota->id_provinsi])
                             </div>
-
-                    <div class="form-group">
-                        <label for="">nama rw</label>
-                        <input type="text" name="nama_rw"  value="{{$rw->nama_rw}}" class="form-control" require>
-                    
+                            <div class="form-group">
+                                <label for="">Jumlah Reaktif</label>
+                                <input type="text" name="reaktif" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Jumlah Positif</label>
+                                <input type="text" name="positif" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Jumlah Meninggal</label>
+                                <input type="text" name="meninggal" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Jumlah Sembuh</label>
+                                <input type="text" name="sembuh" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Tanggal</label>
+                                <input type="date" name="tanggal" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn block">Simpan</button>
+                                
+                            </div>
+                        </form>
                     </div>
-                   
-                    <div class="form-group">
-
-                        <button type="submit" class="btn btn-primary btn-block">simpan</button>
-                    
-                    </div>
-                    </form>
-                
                 </div>
-            
             </div>
-        
         </div>
-    
     </div>
-
-</div>
 @endsection

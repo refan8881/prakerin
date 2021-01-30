@@ -5,9 +5,9 @@
 <div class="col-md-12">
     <div class="card">
         <div class="card-header">
-        Data rw
+        Data kasus
         <a href="{{route('kasus.create')}}" class="btn btn-primary float-right"> 
-            tambah rw
+            tambah
          </a>
         </div>
             <div class="card-body">
@@ -16,31 +16,39 @@
                         <table class="table">
 
                         <tr>
-                            <th>No</th>
-                            <th>RW</th>
-                            <th>Jumlah Positif</th>
-                            <th>Jumlah Meninggal</th>
-                            <th>Jumlah Sembuh</th>
-                            <th>Tanggal</th>
-                            <th>Aksi</th>
+                                <th>No</th>
+                                <th>Lokasi</th>
+                                <th>Jumlah Reaktif</th>
+                                <th>Jumlah Positif</th>
+                                <th>Jumlah Sembuh</th>
+                                <th>Jumlah Meninggal</th>
+                                <th>Tanggal</th>
+                                <th>Aksi</th>
                             
                         </tr>
                         @php $no=1; @endphp
                         @foreach($kasus as $data)
                         <tr>
                             <td>{{$no++}}</td>
-                            <td>RW {{$data->rw->nama_rw}}</td>
-                            <td>{{$data->positif}} Orang</td>
-                            <td>{{$data->meninggal}} Orang</td>
-                            <td>{{$data->sembuh}} Orang</td>
-                            <td>{{$data->tanggal}} Orang</td>
+                            
+                            
+                            <td>
+                                    Rw <b>{{$data->rw->nama_rw}}</b>, {{$data->rw->desa->nama_desa}}<br>
+                                    {{$data->rw->desa->kecamatan->nama_kecamatan}}<br> {{$data->rw->desa->kecamatan->kota->nama_kota}},
+                                    {{$data->rw->desa->kecamatan->kota->provinsi->nama_provinsi}}
+                                </td>
+                                <td>{{$data->reaktif}}</td>
+                                <td>{{$data->positif}}</td>
+                                <td>{{$data->sembuh}}</td>
+                                <td>{{$data->meninggal}}</td>
+                                <td>{{$data->tanggal}}</td>
                             <td>
                                 <form action="{{route('kasus.destroy',$data->id)}}" method="post">
                                 @csrf
                                 @method('delete')
                                 <a href="{{route('kasus.edit',$data->id)}}" class="btn btn-info">edit</a>
                                 <a href="{{route('kasus.show',$data->id)}}" class="btn btn-warning">show</a>
-                                <button type="submit" class="btn btn-danger">delete</button>
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('aslina eta teh ?')">Delete</button>
                                 </form>
                             </td>
                         </tr>

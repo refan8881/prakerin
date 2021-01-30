@@ -43,11 +43,10 @@ class ProvinsiController extends Controller
         ],[
             'kode_provinsi.required' => 'kode provinsi tidak boleh kosong',
             'kode_provinsi.max' => 'kode maksimal 3 karakter',
-            
+            'kode_provinsi.unique' => 'kode provinsi sudah terdaftar',
+            'nama_provinsi.unique' => 'nama provinsi sudah terdaftar',          
             'nama_provinsi.required' => 'nama provinsi tidak boleh kosong',
             'nama_provinsi.max' => 'nama provinsi tidak boleh kurang dari 2 huruf',
-            'kode_provinsi.unique' => 'kode provinsi sudah terdaftar',
-            'nama_provinsi.unique' => 'nama provinsi sudah terdaftar',
         ]
         );
 
