@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Post;
 
 class PostsController extends Controller
 {
@@ -69,8 +69,8 @@ class PostsController extends Controller
         if ($post) {
             return response()->json([
                 'success' => true,
-                'message' => 'Post Berhasil Di Hapus!',
-                
+                'message' => 'Detail Post!',
+                'data'    => $post
             ], 200);
         } else {
             return response()->json([
@@ -81,7 +81,7 @@ class PostsController extends Controller
         }
     }
 
-    public function update(Request $request ,$id)
+    public function update(Request $request, $id)
     {
         //validate data
         $validator = Validator::make($request->all(), [
@@ -103,11 +103,11 @@ class PostsController extends Controller
             ],400);
 
         } else {
+
             $post = Post::findOrFail($id);
             $post->title = $request->title;
             $post->content = $request->content;
-
-
+            $post->save();
 
             if ($post) {
                 return response()->json([
