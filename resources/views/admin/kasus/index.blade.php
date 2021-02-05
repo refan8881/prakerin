@@ -18,7 +18,7 @@
                         <tr>
                                 <th>No</th>
                                 <th>Lokasi</th>
-                                <th>Jumlah Reaktif</th>
+                                <th>Rw</th>
                                 <th>Jumlah Positif</th>
                                 <th>Jumlah Sembuh</th>
                                 <th>Jumlah Meninggal</th>
@@ -37,7 +37,7 @@
                                     {{$data->rw->desa->kecamatan->nama_kecamatan}}<br> {{$data->rw->desa->kecamatan->kota->nama_kota}},
                                     {{$data->rw->desa->kecamatan->kota->provinsi->nama_provinsi}}
                                 </td>
-                                <td>{{$data->reaktif}}</td>
+                                <td>{{$data->rw->nama_rw}}</td>
                                 <td>{{$data->positif}}</td>
                                 <td>{{$data->sembuh}}</td>
                                 <td>{{$data->meninggal}}</td>
