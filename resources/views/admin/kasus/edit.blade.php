@@ -17,10 +17,7 @@
                                             'selectedKota'=>$kasus->rw->desa->kecamatan->id_kota,
                                             'selectedProvinsi'=>$kasus->rw->desa->kecamatan->kota->id_provinsi])
                             </div>
-                            <div class="form-group">
-                                <label for="">Jumlah Reaktif</label>
-                                <input type="text" name="reaktif" class="form-control" required>
-                            </div>
+                            
                             <div class="form-group">
                                 <label for="">Jumlah Positif</label>
                                 <input type="text" name="positif" class="form-control" required>

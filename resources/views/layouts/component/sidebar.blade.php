@@ -13,39 +13,45 @@
           <ul class="navbar-nav">
            
             <li class="nav-item">
-              <a class="nav-link" href="./provinsi">
+              
+              <a href="{{url('/admin/provinsi')}}">
                 <i class="ni ni-planet text-orange"></i>
                 <span class="nav-link-text">Provinsi</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./kota">
-                <i class="ni ni-pin-3 text-primary"></i>
-                <span class="nav-link-text">Kota</span>
+              
+              <a href="{{url('/admin/kota')}}">
+                <i class="ni ni-planet text-orange"></i>
+                <span class="nav-link-text">kota</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./kecamatan">
-                <i class="ni ni-single-02 text-yellow"></i>
-                <span class="nav-link-text">Kecamatan</span>
+              
+              <a href="{{url('/admin/kecamatan')}}">
+                <i class="ni ni-planet text-orange"></i>
+                <span class="nav-link-text">kecamatan</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./desa">
-                <i class="ni ni-bullet-list-67 text-default"></i>
-                <span class="nav-link-text">Desa</span>
+              
+              <a href="{{url('/admin/desa')}}">
+                <i class="ni ni-planet text-orange"></i>
+                <span class="nav-link-text">desa</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./rw">
-                <i class="ni ni-key-25 text-info"></i>
-                <span class="nav-link-text">Rw</span>
+              
+              <a href="{{url('/admin/rw')}}">
+                <i class="ni ni-planet text-orange"></i>
+                <span class="nav-link-text">rw</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./kasus">
-                <i class="ni ni-circle-08 text-pink"></i>
-                <span class="nav-link-text">Kasus</span>
+              
+              <a href="{{url('/admin/kasus')}}">
+               <i class="ni ni-circle-08 text-blue"></i>
+                <span class="nav-link-text">kasus</span>
               </a>
             </li>
           

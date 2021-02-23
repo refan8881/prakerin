@@ -10,14 +10,11 @@
                     <div class="card-body">
                         <form action="{{route('kasus.store')}}" method="post">
                             @csrf
-                            <div class="row">
+                            <div class="row"> 
                             <div class="col">
                                 @livewire('dropdowns')
                             </div>
-                            <div class="form-group">
-                                <label for="">Jumlah Reaktif</label>
-                                <input type="text" name="reaktif" class="form-control" required>
-                            </div>
+                        
                             <div class="form-group">
                                 <label for="">Jumlah Positif</label>
                                 <input type="text" name="positif" class="form-control" required>

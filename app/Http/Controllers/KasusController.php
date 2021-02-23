@@ -85,7 +85,6 @@ class KasusController extends Controller
     {
         $kasus = Kasus::findOrFail($id);
         $kasus->id_rw = $request->id_rw;
-        $kasus->id_desa = $request->id_desa;
         $kasus->positif = $request->positif;
         $kasus->meninggal = $request->meninggal;
         $kasus->sembuh = $request->sembuh;

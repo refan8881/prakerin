@@ -7,6 +7,7 @@ use App\Http\Controllers\KecamatanController;
 use App\Http\Controllers\desaController;
 use App\Http\Controllers\rwController;
 use App\Http\Controllers\kasusController;
+use App\Http\Controllers\FrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,3 +71,4 @@ Route::group(['prefix' => 'admin', 'middleware'=>['auth']],function(){
     Route::resource('kasus', kasusController::class);
 
 });
+Route::resource('/', FrontendController::class);
