@@ -11,7 +11,7 @@
                 </div>
                 <div class="card-body">
 
-                <h1>Create Post</h1>
+               
 
 
                     <form action="{{route('provinsi.update',$provinsi->id)}}" method="post">

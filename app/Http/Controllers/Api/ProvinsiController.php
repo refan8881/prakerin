@@ -80,16 +80,20 @@ class ProvinsiController extends Controller
                     ->sum('kasuses.meninggal');
             
         $data = [
+            [
                 'success' => true,
                 'Data' => [
                     ['Hari ini' => $today,
                     'Semua' => $allDay],
                 ],
+                ],
+                [
                 'Total' => [
                     'Positif' => $positif,
                     'Sembuh' => $sembuh,
                     'Meninggal' => $meninggal
                 ],
+            ],
         ];    
         return response()->json($data, 200);        
     }
