@@ -19,7 +19,7 @@ class ProvinsiController extends Controller
 
     public function global()
     {
-            $global = Http::get('https://api.kawalcorona.com/' )->json();
+            // $global = Http::get('https://api.kawalcorona.com/' )->json();
             //dd($response);  
             foreach ($global as $data => $value ) {
                 $raw = $value['attributes'  ];
