@@ -35,21 +35,21 @@
         <div class="item active" style="background-image: url(images/slider/1.jpg)">
           <div class="caption">
             <h1 class="animated fadeInLeftBig">Welcome to <span>COVID-19</span></h1>
-            <p class="animated fadeInRightBig">Refana Bags Agustian</p>
+            <p class="animated fadeInRightBig">Refana Bagas Agustian</p>
             <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
           </div>
         </div>
         <div class="item" style="background-image: url(images/slider/2.jpg)">
           <div class="caption">
             <h1 class="animated fadeInLeftBig">Say Hello to <span>COVID-19</span></h1>
-            <p class="animated fadeInRightBig">Refana Bags Agustian</p>
+            <p class="animated fadeInRightBig">Refana Bagas Agustian</p>
             <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
           </div>
         </div>
         <div class="item" style="background-image: url(images/slider/3.jpg)">
           <div class="caption">
             <h1 class="animated fadeInLeftBig">We are <span>Covid-19</span></h1>
-            <p class="animated fadeInRightBig">Refana Bags Agustian</p>
+            <p class="animated fadeInRightBig">Refana Bagas Agustian</p>
             <a data-scroll class="btn btn-start animated fadeInUpBig" href="#services">Start now</a>
           </div>
         </div>
